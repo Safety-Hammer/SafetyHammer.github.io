@@ -17,6 +17,14 @@ function getcookie() {
   document.write(document.cookie)
     
 }
+ function clearAllCookie() {
+				var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+				if(keys) {
+					for(var i = keys.length; i--;)
+						document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+				}
+			}
+
     //getcookie();
     </script>
 <span id="s1">test</span>
@@ -25,4 +33,5 @@ var obj = document.getElementById('s1');
 obj.innerHTML = '      ';//李岩说的没错，注意大小写，innerHTML而不是InnerHTML
 obj.innerHTML += document.cookie;
 </script>
+    
     </body></html>
