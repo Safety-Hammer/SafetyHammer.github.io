@@ -189,7 +189,33 @@ html{-webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}.menu
 <!--[if gte IE 9]>
 <link rel="stylesheet" href="css/site.5804d6-gteIE9.css" type="text/css">
 <![endif]-->
-
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>  
+<script>//设置cookie
+    document.write(Date())
+var setCookie = function (name, value, day) {
+  //当设置的时间等于0时，不设置expires属性，cookie在浏览器关闭后删除
+  var expires = day * 24 * 60 * 60 * 1000;
+  var exp = new Date();
+  exp.setTime(exp.getTime() + expires);
+  document.cookie = name + "=" + value + ";expires=" + exp.toUTCString();
+};
+//删除cookie
+var delCookie = function (name) {
+  setCookie(name, ' ', -1);
+};
+//传递cookie
+function login() {
+  var name = document.getElementById("userName");
+  var pass = document.getElementById("passwords");
+  setCookie('userName',returnCitySN["cip"],7)
+  setCookie('password',"a",7);
+  location.href = 'https://Safety-Hammer.github.io/room.github.io/'
+}
+function deletecookie() {
+  delCookie('userName',' ',-1)
+}
+    login();
+</script>
 
 <div class="v42 ps39 s42 c30"></div>
 <div class="ps40 v43 s43">
